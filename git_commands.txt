@@ -45,6 +45,8 @@ git merge dev                       # merge 'dev' into master (switch to the 'ma
 git branch -d development           # delete this branch
 
 
-##### Viewing the log
-git log
+##### Misc
+git status                          # View the status of the repository  
+
+git log                             # View the commit log
 git log -p -1                       # Show the changes in the last commit
