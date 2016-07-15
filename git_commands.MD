@@ -1,12 +1,12 @@
-## Git Basics  
+# Git Basics  
 
-### Set up your information
+## Set up your information
 git config --global user.name "John Doe"  
 git config --global user.email "jdoe@domain.com"  
 git config --global github.user jdoe  
 
 
-### Clone a repository
+## Clone a repository
 git clone https://github.com/ktbyers/pynet_ons  
 
 
