@@ -1,1 +1,2 @@
 print "whatever"
+print "whatever"
