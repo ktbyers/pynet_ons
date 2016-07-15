@@ -1,41 +1,41 @@
-### Git Basics  
+## Git Basics  
 
-##### Set up your information
+#### Set up your information
 git config --global user.name "John Doe"  
 git config --global user.email "jdoe@domain.com"  
 git config --global github.user jdoe  
 
 
-##### Clone a repository
+#### Clone a repository
 git clone https://github.com/ktbyers/pynet_ons  
 
 
-##### Add file to a repository
+#### Add file to a repository
 vi my_file.py
 git add my_file.py
 git commit -m "Adding my_file.py"
 
 
-##### Remove a file
+#### Remove a file
 git rm ex1_strings.py
 git commit -m "Removin ex1_strings.py
 
 
-##### Push changes to remote repository
+#### Push changes to remote repository
 git push origin master
 
 where 'origin' is defined in 'git remote -v'
 where 'master' branch is the src branch; dest branch is same as src branch
 
 
-##### Pull changes from remote repository
+#### Pull changes from remote repository
 git pull origin master
 
 where 'origin' is defined in 'git remote -v'
 where 'master' branch is the src branch; dest branch is same as src branch
 
 
-##### Branches
+#### Branches
 git branch                          # Look at branches
 git branch dev                      # Create a 'dev' branch
 git checkout dev                    # Switch to 'dev' branch
@@ -45,7 +45,7 @@ git merge dev                       # merge 'dev' into master (switch to the 'ma
 git branch -d development           # delete this branch
 
 
-##### Misc
+#### Misc
 git status                          # View the status of the repository  
 
 git log                             # View the commit log
