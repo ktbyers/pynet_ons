@@ -36,6 +36,7 @@ where 'master' branch is the src branch; dest branch is same as src branch
 
 
 ## Branches
+```
 git branch                          # Look at branches  
 git branch dev                      # Create a 'dev' branch  
 git checkout dev                    # Switch to 'dev' branch  
@@ -43,6 +44,7 @@ git checkout master                 # Switch back to 'master' branch
 git push origin dev                 # Push changes up to GitHub for 'dev' branch jj
 git merge dev                       # merge 'dev' into master (switch to 'master' branch first)  
 git branch -d dev                   # delete this branch  
+```
 
 
 ## Misc
