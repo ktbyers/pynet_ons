@@ -1,0 +1,5 @@
+Exercise16
+a. From your earlier exercise where you parsed the serial number from show_version
+b. Create two functions
+c. Function1 opens the file and returns all of the data in the file as a text string. filename is a function parameter
+d. Function2 parse show_version output and returns the serial number
