@@ -1,0 +1,5 @@
+Exercise12
+a. Prompt for a network
+b. Always assume /24
+c. Ping the first ten IP addresses of that subnet.
+d. Print out IP addresses where ping was successful
