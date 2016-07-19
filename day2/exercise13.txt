@@ -1,0 +1,3 @@
+Exercise13
+Repeat exercise 11 except use a while loop
+Don’t use a list just use a counter variable i

@@ -1,0 +1,3 @@
+Exercise15
+a. Expand on exercise14, try to retrieve the ‘device_type’ just by directly accessing the key. Gracefully, handle the exception and print the message that the device_type field is not found.
+
