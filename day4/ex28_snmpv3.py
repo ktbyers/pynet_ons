@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 """
 SNMP query all of the interfaces on the pynet-rtr1 using SNMPv3.
-Get the interface description.
-The octets in/out over a one minute period.
+Get the interface description and the in_octets/out_octets
 """
 from getpass import getpass
 from snmp_helper import snmp_get_oid_v3, snmp_extract
@@ -15,8 +14,7 @@ IFOUTOCTETS = '1.3.6.1.2.1.2.2.1.16.'
 def main():
     """
     SNMP query all of the interfaces on the pynet-rtr1 using SNMPv3.
-    Get the interface description.
-    The octets in/out over a one minute period.
+    Get the interface description and the in_octets/out_octets
     """
     my_key = getpass(prompt="Auth + Encryption Key: ")
 
