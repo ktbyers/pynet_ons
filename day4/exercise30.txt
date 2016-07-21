@@ -1,5 +1,5 @@
 Exercise 30
-Use eapi to retrieve ‘show ip route’ from your arista switch.
-From the returned data structure retrieve the prefix, output interface, and next hop 
+Use eapi to retrieve 'show ip route' from your arista switch.
+From the returned data structure retrieve the prefixes, the output interfaces, and the next hops
 (if available).
-Print this to standard output.
+Print these routes and associated information to standard out.
