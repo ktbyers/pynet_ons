@@ -1,8 +1,20 @@
 #!/usr/bin/env python
+"""
+Use eapi to retrieve 'show ip route' from your arista switch.
+From the returned data structure retrieve the prefixes, the output interfaces, and the next hops
+(if available).
+Print these routes and associated information to standard out.
+"""
 from pprint import pprint
 import pyeapi
 
 def main():
+    """
+    Use eapi to retrieve 'show ip route' from your arista switch.
+    From the returned data structure retrieve the prefixes, the output interfaces, and the next hops
+    (if available).
+    Print these routes and associated information to standard out.
+    """
     pynet_sw1 = pyeapi.connect_to("pynet-sw1")
     output = pynet_sw1.enable("show ip route")
 
