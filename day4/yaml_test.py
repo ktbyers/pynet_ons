@@ -18,7 +18,7 @@ my_dict['key5'] = False
 my_dict['key6'] = new_dict
 
 print my_dict
-print yaml.dump(my_dict, default_flow_style=True)
+print yaml.dump(my_dict, default_flow_style=False)
 
 with open("my_file.yml", "w") as f:
     f.write(yaml.dump(my_dict, default_flow_style=False))
