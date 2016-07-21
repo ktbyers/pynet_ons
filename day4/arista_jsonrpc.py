@@ -8,7 +8,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 ip = '184.105.247.72'
 port = '443'
 username = 'admin1'
-password = '99saturday'
+password = ''
 
 url = 'https://{}:{}@{}:{}/command-api'.format(username, password, ip, port)
 

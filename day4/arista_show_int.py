@@ -1,6 +1,5 @@
 from pprint import pprint
 import pyeapi
-import pdb
 import sys
 
 pynet_sw1 = pyeapi.connect_to("pynet-sw1")
