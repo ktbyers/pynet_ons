@@ -1,0 +1,4 @@
+Exercise 28
+SNMP query all of the interfaces on the pynet-rtr1 using SNMPv3. 
+Get the interface description. 
+The octets in/out over a five minute period (5 one minute samples).

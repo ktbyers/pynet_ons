@@ -1,0 +1,5 @@
+Exercise26
+Connect to the Arista switch
+Configure a vlan with an ID between 100 to 999 (also configure a vlan name)
+Configure this directly from the script and also from a file  
+
