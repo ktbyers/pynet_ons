@@ -6,3 +6,5 @@ The octets in/out over a five minute period (5 one minute samples).
 1.3.6.1.2.1.2.2.1.2    ifDescr
 1.3.6.1.2.1.2.2.1.10   inOctets
 1.3.6.1.2.1.2.2.1.16   outOctets
+
+http://tools.cisco.com/Support/SNMP/do/BrowseOID.do
