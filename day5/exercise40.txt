@@ -1,0 +1,7 @@
+Exercise40
+Use Ansible to configure your 'primary Ethernet interface' as follows:
+
+interface description:    *** IN USE ***
+switchport mode:          access
+VLAN:                     <one of the VLANs created in exercise39>
+
