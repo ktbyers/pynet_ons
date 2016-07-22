@@ -1,0 +1,6 @@
+Exercise7
+a. Go back to exercise3 splitting on IP address
+b. Convert that code to save the split as a list
+c. Set the last octet of the list to have a ‘0’ value
+d. Convert each octet to a binary number (will have to help)
+e. Print out each octet in both decimal and binary

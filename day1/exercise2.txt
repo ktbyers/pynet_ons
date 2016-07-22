@@ -1,0 +1,8 @@
+Exercise2
+a. Create a branch in your lab environment
+b. Switch to this branch
+c. Add a file and commit this new file (in the new branch)
+d. Push the new branch up to GitHub
+e. Merge the new branch into the master branch
+f. [Optional] clone my pynet_ons repository; commit a change to your pynet_ons; submit 
+   a pull request on this.
