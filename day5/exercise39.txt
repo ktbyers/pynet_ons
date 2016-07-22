@@ -1,0 +1,4 @@
+Exercise39 
+Using the Arista eos_vlan Ansible module configure three VLANs on the Arista 
+switch specifying both the VLAN IDs and the VLAN names.  For the VLAN IDs 
+randomly pick three numbers between 100 and 999.
