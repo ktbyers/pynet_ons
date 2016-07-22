@@ -1,0 +1,4 @@
+devices:
+  - { hostname: rtr1, secret: whatever, bgp: true }
+  - { hostname: rtr2, secret: whatever, bgp: false }
+  - { hostname: rtr3, secret: whatever, bgp: true }

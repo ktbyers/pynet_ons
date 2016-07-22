@@ -1,0 +1,11 @@
+# Exercise 33 - Jinja2 templating
+# Same as exercise 32 except
+#
+# Add an if-conditional and a for-loop into your template.
+#
+---
+- name: Generate configuration file
+  hosts: local
+
+  roles:
+    - routers

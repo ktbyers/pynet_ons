@@ -1,0 +1,21 @@
+hostname {{ item.hostname }}
+!
+logging buffered 32000
+no logging console
+enable secret 0 {{ item.secret }}
+!
+{% for intf in range(1, 49) %}
+interface GigabitEthernet0/{{ intf }}
+  switchport mode access 1
+  no ip address
+!
+{% endfor %}
+!
+{% if item.bgp %}
+router bgp 42
+ bgp router-id 10.220.88.20
+ bgp log-neighbor-changes
+ neighbor 10.220.88.32 remote-as 43
+ neighbor 10.220.88.38 remote-as 44
+{% endif %}
+!
