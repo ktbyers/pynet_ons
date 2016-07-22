@@ -1,0 +1,7 @@
+Exercise41
+Use Ansible to configure your 'primary Ethernet interface' as follows:
+
+switchport mode:        trunk
+trunk native VLAN:      VLAN1
+trunk allowed VLANs:    <the three VLANs created in exercise1>
+
