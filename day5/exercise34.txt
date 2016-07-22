@@ -1,0 +1,4 @@
+Exercise 34
+Create your database
+Run the load_devices and load_credentials scripts
+Use python manage.py shell to link the credentials to the devices
