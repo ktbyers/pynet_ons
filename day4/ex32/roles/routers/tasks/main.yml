@@ -1,0 +1,5 @@
+---
+- name: Generate configuration files
+  template: src=net_config.j2 dest=/home/kbyers/pynet_ons/day4/ex32/{{ item.hostname }}.txt
+  with_items: "{{ devices }}"
+

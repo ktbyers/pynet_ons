@@ -1,0 +1,4 @@
+devices:
+  - { hostname: rtr1, secret: whatever }
+  - { hostname: rtr2, secret: whatever }
+  - { hostname: rtr3, secret: whatever }

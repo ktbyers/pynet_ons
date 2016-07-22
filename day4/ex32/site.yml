@@ -1,0 +1,25 @@
+# Exercise 32 - Jinja2 templating
+# Setup the ansible directory structure for a switch role
+# ./roles/switch/tasks
+# ./roles/switch/templates
+#./roles/switch/vars
+#
+# Setup a simple Jinja2 template in the ./templates directory
+#
+# >>>>>>
+# hostname {{item.hostname}}
+# !
+# logging buffered 32000
+# no logging console
+# enable secret 0 {{item.secret}}
+# >>>>>>
+#
+# Setup a vars/main.yml file consisting of five different hostnames, with five secrets
+# Setup a tasks/main.yml and site.yml that will generate five “config files” using the template.
+
+---
+- name: Generate configuration file
+  hosts: local
+
+  roles:
+    - routers

@@ -1,4 +1,4 @@
 Exercise 31
-Try to execute ‘show interfaces’ on the Arista switch using up.
+Try to execute ‘show interfaces’ on the Arista switch using eapi.
 See if you can extract the interfaceCounters inOctets/outOctets for all the interfaces that have 
 this information.

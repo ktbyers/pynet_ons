@@ -1,0 +1,6 @@
+hostname rtr2
+!
+logging buffered 32000
+no logging console
+enable secret 0 whatever
+
