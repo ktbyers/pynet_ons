@@ -1,0 +1,4 @@
+Exercise 37 (Optional)
+Convert exercise 35 to use threads so that the SSH connections run concurrently.
+Execute ‘show arp’ on each device
+Record the time that the program takes to execute
