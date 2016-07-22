@@ -1,0 +1,4 @@
+Exercise45
+Use the eos_config module to configure three vlans on all four Arista switches. 
+Assign both the vlan id and the vlan name. This will require that you modify 
+your ~/ansible-hosts file.
