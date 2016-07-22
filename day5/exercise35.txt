@@ -1,0 +1,5 @@
+Exercise 35
+Write a Python script that retrieves all of the network devices from the database
+Using this data, make a Netmiko connection to each device.
+Retrieve ‘show arp’.
+Record the time that the program takes to execute.
