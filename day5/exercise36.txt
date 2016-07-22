@@ -1,0 +1,5 @@
+Exercise 36 
+Integrate your show version functions into the system (for the two Cisco devices). 
+In other words, use the database information to make a Netmiko connection. 
+From these Netmiko connections retrieve show version and save the ‘vendor’, ‘model’, 
+‘os_version’, ‘serial_number’ and ‘uptime_seconds’ to the database.
