@@ -1,0 +1,56 @@
+---
+- name: Test Cisco IOS line-by-line editing
+  gather_facts: no
+  hosts: pynet-rtr1
+  vars:
+    creds:
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+
+  tasks:
+    - name: Configure logging
+      ios_config:
+        provider: "{{ creds }}"
+        lines: 
+           - logging buffered 19000
+           - no logging console
+        match: line
+      notify: 
+        - write mem
+
+    - name: Add interface vlan127 to the config
+      ios_config:
+        provider: "{{ creds }}"
+        lines:
+          - ip address 192.168.127.1 255.255.255.0
+          - no ip proxy-arp
+        parents: ['interface Vlan127']
+        match: line
+
+    - name: Add TEST1 ACL
+      ios_config:
+        provider: "{{ creds }}"
+        lines:
+          - permit ip host 1.1.1.1 any log
+          - permit ip host 2.2.2.2 any log
+          - permit ip host 3.3.3.3 any log
+          - permit ip host 4.4.4.4 any log
+          - permit ip host 5.5.5.5 any log
+        parents: ["ip access-list extended TEST1"]
+        before: ["no ip access-list extended TEST1"]
+        replace: block
+        match: line
+
+    - ios_command:
+        commands: "show ip int brief"
+        provider: "{{ creds }}"
+      register: results
+    - debug: var=results
+
+  handlers:
+    - name: write mem
+      ios_command:
+        commands: "write mem"
+        provider: "{{ creds }}"
+      changed_when: True
