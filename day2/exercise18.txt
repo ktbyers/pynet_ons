@@ -1,0 +1,6 @@
+Exercise18
+Expand on exercise 17
+Create a list with three numbers
+Use *args to call the function
+Create a dictionary that has three keys of x, y, and z
+Call the functions using **kwargs
