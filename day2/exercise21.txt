@@ -1,5 +1,4 @@
 Exercise 21
-1. re-write exercise 21, but use a class to contain all the functions (methods)
+1. re-write exercise 20, but use a class to contain all the functions (methods)
 2. save the serial_number, model, vendor, uptime, os_version to the object
 3. Print out these values from the object
-4. Use if __name__ and a main() function
