@@ -6,6 +6,9 @@ class NetworkDevice(object):
         self.username = username
         self.password = password
 
+    def __str__(self):
+        return self.ip + " " + self.username
+
     def print_user(self):
         print "Hello world"
         print "Username is: {}".format(self.username)

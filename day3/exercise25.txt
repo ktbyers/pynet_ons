@@ -1,0 +1,21 @@
+Exercise25
+write a Netmiko script that connects to one Cisco router and one Arista switch.
+Print the current prompt
+use send_command to retrieve ‘show version’ from the two devices
+use send_command_expect to retrieve ‘show run’ from the two devices. 
+Save the running config to a file.
+
+    pynet_rtr1 = {
+        'device_type': 'cisco_ios',
+        'ip':   '184.105.247.70',
+        'username': 'pyclass',
+        'password': rtr1_pass,
+    }
+
+    pynet_sw1 = {
+        'device_type': 'arista_eos',
+        'ip':   '184.105.247.72',
+        'username': 'admin1',
+        'password': sw1_pass,
+    }
+
