@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 from ciscoconfparse import CiscoConfParse
+import sys
 
-def main():
+#def main():
+if True:
     cisco_file = 'pynet-rtr1.txt'
     cisco_cfg = CiscoConfParse(cisco_file)
     crypto_maps = cisco_cfg.find_objects(r"^crypto map CRYPTO")
@@ -26,5 +28,5 @@ def main():
         print "  {0}".format(entry.text)
     print
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
