@@ -1,3 +1,4 @@
 Exercise 27
 Use Netmiko to retrieve show run from a router.
-Use ConfParse to find all of the interfaces that have ‘no ip address’ and print these out.
+Use ConfParse to find all of the interfaces that have ‘no ip address’ and print 
+these out.
