@@ -3,8 +3,13 @@ import pyeapi
 import sys
 
 pynet_sw1 = pyeapi.connect_to("pynet-sw1")
+#return_val = pynet_sw1.config(['vlan 901', 'name red'])
+#print return_val
+
+#show_int = pynet_sw1.enable("show interfaces")
+#pprint(show_int)
+
 #try:
-#    return_val = pynet_sw1.config(['vlan 901', 'name red'])
 #except pyeapi.eapilib.CommandError:
 #    pass
 #
@@ -13,7 +18,6 @@ pynet_sw1 = pyeapi.connect_to("pynet-sw1")
 ####pynet_sw1.enable("write memory")
 ###
 ###
-#show_int = pynet_sw1.enable("show interfaces")
 #pprint(show_int)
 ###sys.exit()
 ####
@@ -27,14 +31,14 @@ pynet_sw1 = pyeapi.connect_to("pynet-sw1")
 ###output = pynet_sw1.enable("show ip route")
 ###pprint(output)
 ####
-#show_run = pynet_sw1.running_config
-#print show_run
-###
+###show_run = pynet_sw1.running_config
+###print show_run
+
 vlan = pynet_sw1.api('vlans')
-print vlan.get(1)
-print vlan.get(901)
+pprint(vlan.getall())
+###print vlan.get(1)
+###print vlan.get(901)
 #vlan.create(903)
-#pprint(vlan.getall())
 ####True
 ###
 ####print vlan.get(902)
