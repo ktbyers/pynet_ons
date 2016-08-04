@@ -1,0 +1,7 @@
+Exercise 34b
+1. Create two new network devices in the database using a script (test_device1 and test_device2).
+   Test creating them using direct NetworkDevice() creation and get_or_create().
+2. Set the vendor for all of the network devices in the database
+3. Delete test_device1 and test_device2 from the database
+4. Retrieve a single object from the database by querying using device_name
+5. Retrieve all of the devices from the database that are using the arista credentials
