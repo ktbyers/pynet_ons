@@ -1,0 +1,28 @@
+---
+
+# Use Ansible to configure your 'primary Ethernet interface' as follows:
+#
+# interface description:    *** IN USE ***
+# switchport mode:          access
+# VLAN:                     <one of the VLANs created in exercise1>
+#
+
+- name: Arista-Ansible Exercise2
+  hosts: arista
+
+  tasks:
+    - name: Setting Ethernet3 description
+      eos_interface: name=Ethernet3 description="*** IN USE ***"
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: Set Ethernet3 to access mode, VLAN222
+      eos_switchport: name=Ethernet3 mode=access access_vlan=222
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
