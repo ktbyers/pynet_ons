@@ -3,7 +3,7 @@
 Exercise 35
 Write a Python script that retrieves all of the network devices from the database
 Using this data, make a Netmiko connection to each device.
-Retrieve 'show arp'.
+Retrieve 'show run'.
 Record the time that the program takes to execute.
 """
 from datetime import datetime
@@ -28,7 +28,7 @@ def main():
     """
     Write a Python script that retrieves all of the network devices from the database
     Using this data, make a Netmiko connection to each device.
-    Retrieve 'show arp'.
+    Retrieve 'show run'.
     Record the time that the program takes to execute.
     """
     start_time = datetime.now()
@@ -38,10 +38,13 @@ def main():
     for a_device in my_devices:
         a_device_netmiko = create_netmiko_dict(a_device)
         remote_conn = ConnectHandler(**a_device_netmiko)
-        show_arp = remote_conn.send_command_expect("show arp")
+        if 'juniper' in a_device.device_type:
+            show_run = remote_conn.send_command_expect("show configuration")
+        else:
+            show_run = remote_conn.send_command_expect("show run")
         print a_device.device_name
         print '-' * 80
-        print show_arp
+        print show_run
         print '-' * 80
         print
     print ">>>>>>>> Total Time: {}".format(datetime.now() - start_time)
