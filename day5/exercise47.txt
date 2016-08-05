@@ -1,0 +1,3 @@
+Use the ‘show interfaces’ output from ntc_show_command to determine if vlan127 
+exists on Cisco pynet-rtr1. If it exists, then use the ntc_config_command module
+to remove it.

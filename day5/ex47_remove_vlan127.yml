@@ -1,0 +1,44 @@
+---
+# Use the ‘show interfaces’ output from ntc_show_command to determine if interface vlan127 
+# exists on Cisco pynet-rtr1. If it exists, then use the ntc_config_command module 
+# to remove it.
+
+- name: Remove interface VLAN127 (if it exists)
+  hosts: pynet-rtr1
+  gather_facts: false
+  tasks:
+    - name: Cisco show interfaces
+      ntc_show_command:
+        platform: cisco_ios_ssh
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        command: 'show interfaces'
+        template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
+      register: output
+
+    - name: Parse show interfaces output
+      set_fact:
+        interfaces: "{{ output.response }}"
+
+    - name: vlan127 initial value
+      set_fact:
+        vlan127: false
+
+    - name: Set vlan127
+      set_fact:
+        vlan127: true
+      with_items: "{{ interfaces }}"
+      when: item.interface == "Vlan127"
+
+    - debug: var=vlan127
+
+    - name: Remove interface Vlan127 (if it exists)
+      ntc_config_command:
+        platform: cisco_ios_ssh
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        commands:
+          - 'interface vlan127'
+      when: vlan127
