@@ -1,0 +1,5 @@
+Exercise46 (optional)
+Expand your Django automation system to pull vendor, model, os_version, uptime 
+from one of the Arista switches via eAPI. Modify your Django model to add a 
+configuration file. Grab show run from all of the network devices in your 
+environment and store the configuration file in the database.

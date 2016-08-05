@@ -1,0 +1,32 @@
+---
+# Execute 'show interfaces' using the ntc_show_command on the two Cisco
+# routers. Register the output and print the output to screen using debug.
+# Parse the output and retrieve the interface name and link status for the
+# first interface in the response list.
+
+- name: Cisco show interfaces
+  hosts: cisco
+  gather_facts: false
+  tasks:
+    - name: Cisco show interfaces
+      ntc_show_command:
+        platform: cisco_ios_ssh
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        command: 'show interfaces'
+        template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
+      register: output
+    - debug: var=output
+
+    - name: Save show_int
+      set_fact:
+        interfaces: "{{ output.response }}"
+
+    - name: Save show_int
+      set_fact:
+        intf_name: "{{ interfaces[0].interface }}"
+        link_status: "{{ interfaces[0].link_status }}"
+    - debug: var=intf_name
+    - debug: var=link_status
+

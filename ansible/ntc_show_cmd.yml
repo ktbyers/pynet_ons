@@ -38,7 +38,7 @@
         host: "{{ host }}"
         username: "{{ username }}"
         password: "{{ password }}"
-        command: 'show version'
+        command: 'show interfaces'
         template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
       register: result
       tags: show_version

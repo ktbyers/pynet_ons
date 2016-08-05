@@ -1,5 +1,4 @@
-Exercise46 (optional)
-Expand your Django automation system to pull vendor, model, os_version, uptime 
-from one of the Arista switches via eAPI. Modify your Django model to add a 
-configuration file. Grab show run from all of the network devices in your 
-environment and store the configuration file in the database.
+Execute 'show interfaces' using the ntc_show_command on the two Cisco
+routers. Register the output and print the output to screen using debug.
+Parse the output and retrieve the interface name and link status for the
+first interface in the response list.
