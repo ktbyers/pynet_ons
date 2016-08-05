@@ -1,0 +1,48 @@
+---
+
+- name: Obtain current Arista VLANs
+  hosts: arista
+  gather_facts: false
+  tags: arista
+  tasks:
+    - name: show vlan
+      ntc_show_command:
+        host: "{{ eapi_hostname }}"
+        username: "{{ eapi_username }}"
+        password: "{{ eapi_password }}"
+        platform: arista_eos
+        command: 'show vlan'
+        template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
+      register: result
+      tags: show_vlan
+
+    - debug: var=result
+      tags: show_vlan
+
+    - name: Save vlan_output
+      set_fact:
+        vlan_out: "{{ result.response }}"
+
+    - name: vlan_999 initial value
+      set_fact:
+        vlan_999: false
+
+    - name: Set vlan_999
+      set_fact:
+        vlan_999: true
+      with_items: "{{ vlan_out }}"
+      when: item.vlan_id == "999"
+
+    - name: Create Vlan 999
+      ntc_config_command:
+        host: "{{ eapi_hostname }}"
+        username: "{{ eapi_username }}"
+        password: "{{ eapi_password }}"
+        platform: arista_eos
+        commands: 
+          - 'vlan 999'
+          - 'name BLUE'
+      when: vlan_999 == false
+      register: result
+
+    - debug: var=result
