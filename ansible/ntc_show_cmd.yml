@@ -1,0 +1,48 @@
+---
+
+- name: Obtain Cisco show cmds
+  hosts: cisco
+  gather_facts: false
+  tasks:
+    - name: show Cisco routing table
+      ntc_show_command:
+        platform: cisco_ios_ssh
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        command: 'show ip route'
+        template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
+      register: result
+      tags: show_route
+
+    - debug: var=result
+      tags: show_route
+
+    - name: show Cisco BGP summary
+      ntc_show_command:
+        platform: cisco_ios_ssh
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        command: 'show ip bgp summary'
+        template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
+      register: result
+      tags: show_bgp
+
+    - debug: var=result
+      tags: show_bgp
+
+    - name: Cisco show version
+      ntc_show_command:
+        platform: cisco_ios_ssh
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        command: 'show version'
+        template_dir: /home/kbyers/ntc-ansible/ntc-templates/templates/
+      register: result
+      tags: show_version
+
+    - debug: var=result
+      tags: show_version
+
