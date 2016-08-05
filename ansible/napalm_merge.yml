@@ -1,0 +1,34 @@
+---
+
+- name: Test NAPALM on IOS
+  hosts: pynet-rtr2
+  gather_facts: False
+  tags: cisco
+  tasks:
+    - napalm_install_config:
+        hostname: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        dev_os: ios
+        config_file: merge.cfg
+        commit_changes: True
+        replace_config: False
+        diff_file: "{{ host }}.diff"
+        get_diffs: True
+
+#- name: Test NAPALM on EOS
+#  hosts: pynet-sw1
+#  gather_facts: False
+#  tags: arista
+#  tasks:
+#    - napalm_install_config:
+#        hostname: "{{ eapi_hostname }}"
+#        username: "{{ eapi_username }}"
+#        password: "{{ eapi_password }}"
+#        dev_os: eos
+#        config_file: pynet-sw1.cfg
+#        commit_changes: False
+#        replace_config: True
+#        diff_file: "{{ eapi_hostname }}.diff"
+#        get_diffs: True
+#

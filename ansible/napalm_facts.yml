@@ -1,0 +1,38 @@
+---
+
+- name: NAPALM facts on IOS
+  hosts: pynet-rtr1
+  gather_facts: False
+  tasks:
+    - name: Get facts
+      napalm_get_facts:
+            hostname: "{{ host }}"
+            username: "{{ username }}"
+            password: "{{ password }}"
+            dev_os: ios
+      tags: facts
+      register: result
+
+    - name: Get interfaces
+      napalm_get_facts:
+            hostname: "{{ host }}"
+            username: "{{ username }}"
+            password: "{{ password }}"
+            dev_os: ios
+            filter: [interfaces]
+      tags: interfaces
+      register: result
+
+    - name: Get BGP neighbors
+      napalm_get_facts:
+            hostname: "{{ host }}"
+            username: "{{ username }}"
+            password: "{{ password }}"
+            dev_os: ios
+            filter: [bgp_neighbors]
+      tags: bgp
+      register: result
+
+    - debug: var=result
+      tags: [facts, bgp, interfaces]
+
