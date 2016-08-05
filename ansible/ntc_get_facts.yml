@@ -1,0 +1,31 @@
+---
+
+- name: Test ntc-ansible on IOS (get_facts)
+  hosts: cisco
+  gather_facts: False
+  tags: cisco
+  tasks:
+    - ntc_get_facts:
+        host: "{{ host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        platform: cisco_ios_ssh
+      register: results
+
+    - debug: var=results
+
+- name: Test ntc-ansible on EOS (get_facts)
+  hosts: pynet-sw1
+  gather_facts: False
+  tags: arista
+  tasks:
+    - ntc_get_facts:
+        host: "{{ eapi_hostname }}"
+        username: "{{ eapi_username }}"
+        password: "{{ eapi_password }}"
+        platform: arista_eos_eapi
+        transport: https
+      register: results
+
+    - debug: var=results
+      when: model == 'vEOS'
