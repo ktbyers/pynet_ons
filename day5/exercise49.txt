@@ -1,0 +1,3 @@
+Use the napalm_get_facts module and one of the Arista switches to view the data
+you get back from the ‘facts’, ‘environment’, and ‘interfaces_counter’ filters. 
+Use tags to control which task you are executing.
