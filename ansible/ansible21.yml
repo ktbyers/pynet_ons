@@ -16,6 +16,7 @@
            - logging buffered 19000
            - no logging console
         match: line
+      tags: ios_logging
       notify: 
         - write mem
 
@@ -27,6 +28,7 @@
           - no ip proxy-arp
         parents: ['interface Vlan127']
         match: line
+      tags: ios_vlan127
 
     - name: Add TEST1 ACL
       ios_config:
@@ -41,12 +43,48 @@
         before: ["no ip access-list extended TEST1"]
         replace: block
         match: line
+      tags: ios_acl_match_line
+
+    - name: Add TEST1 ACL (match strict)
+      ios_config:
+        provider: "{{ creds }}"
+        lines:
+          - permit ip host 1.1.1.1 any log
+          - permit ip host 2.2.2.2 any log
+          - permit ip host 3.3.3.3 any log
+          - permit ip host 4.4.4.4 any log
+          - permit ip host 5.5.5.5 any log
+        parents: ["ip access-list extended TEST1"]
+        before: ["no ip access-list extended TEST1"]
+        replace: block
+        match: strict
+      tags: ios_acl_match_strict
+
+    - name: Add TEST1 ACL (match exact)
+      ios_config:
+        provider: "{{ creds }}"
+        lines:
+          - permit ip host 1.1.1.1 any log
+          - permit ip host 2.2.2.2 any log
+          - permit ip host 5.5.5.5 any log
+          - permit ip host 3.3.3.3 any log
+          - permit ip host 4.4.4.4 any log
+        parents: ["ip access-list extended TEST1"]
+        before: ["no ip access-list extended TEST1"]
+        replace: block
+        match: exact
+      tags: ios_acl_match_exact
+      notify: 
+        - write mem
 
     - ios_command:
         commands: "show ip int brief"
         provider: "{{ creds }}"
       register: results
+      tags: ios_command
+
     - debug: var=results
+      tags: ios_command
 
   handlers:
     - name: write mem
